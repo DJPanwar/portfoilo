@@ -25,3 +25,20 @@ darkmode.onclick = () => {
     document.body.classList.remove("active");
   }
 };
+//form fill----
+const form = document.querySelector('form[name="contact"]');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            const successMessage = document.createElement('p');
+            successMessage.textContent = 'Thank you for your message!';
+            form.parentNode.replaceChild(successMessage, form);
+        }).catch((error) => {
+            console.error(error);
+        });
+    });
