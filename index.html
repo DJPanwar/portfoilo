@@ -255,11 +255,11 @@
         <span>Please write your message below!</span>
     </div>
     <div class="contact-form">
-        <form action="POST" name="contact">
+        <form method="POST" name="contact" data-netlify="true">
             <input type="hidden" name="form-name" value="contact">
-            <input type="text" placeholder="Your Name">
-            <input type="email" name="" id="" placeholder="Your Email">
-            <textarea name="" id="message" cols="30" rows="10" placeholder="Write Message Here..." required></textarea>
+            <input type="text" name="name" placeholder="Your Name">
+            <input type="email" name="email" id="" placeholder="Your Email">
+            <textarea name="name" id="message" cols="30" rows="10" placeholder="Write Message Here..." required></textarea>
             <input type="button" value="Send" class="contact-button">
         </form>
     </div>
