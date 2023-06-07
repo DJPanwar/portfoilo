@@ -265,22 +265,33 @@
    border-radius: 0.5rem;
  }
 
- .html-bar {
-   width: 94%;
+ .js1-bar {
+   width: 50%;
  }
 
  .css-bar {
-   width: 84%;
+   width: 60%;
  }
 
  .js-bar {
-   width: 74%;
+   width: 54%;
  }
 
- .react-bar {
+ .my-bar {
+   width: 52%;
+ }
+
+.py-bar { 
+   width: 55%;
+ }
+
+.D-bar {
+   width: 70%;
+ }
+
+.com-bar {
    width: 80%;
  }
-
  .services-content {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
