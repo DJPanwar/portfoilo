@@ -115,9 +115,12 @@
  .home {
    position: relative;
    width: 100%;
-   min-height: 100vh;
+   min-height: 150vh;
    display: grid;
-   grid-template-columns: 0.2fr 1fr 1fr;
+   grid-template-columns: 1fr;
+   background-image: url('WhatsApp\ Image\ 2023-08-04\ at\ 12.36.22\ PM.jpeg');
+   background-size: cover;
+   background-repeat: no-repeat;
    align-items: center;
    gap: 1rem;
  }
@@ -129,27 +132,26 @@
  .home-img img {
    width: 100%;
  }
-.home-img :hover{
-  transform: scale(1.1);
- 
-}
  .home-text span {
    font-size: var(--medium-font);
    font-weight: 500;
+   color: #000;
  }
 
  .home-text h1 {
    font-size: var(--big-font);
+   color: #000;
  }
  .home-text h2 {
-   font-size: 1.1rem;
-   font-weight: 400;
+   margin: 0.7rem 0 1rem;
+   color: #000;
  }
 
  .home-text p {
-   font-size: var(--p-font);
+   font-size: var(--m-font);
    font-weight: 400;
    margin: 0.7rem 0 1rem;
+   color: #000;
  }
 
  .social {
@@ -189,8 +191,12 @@
 
  .about-img img {
    width: 80%;
-   border-radius: 0.5rem;
+   border-radius: 1.5rem;
  }
+ .about-img img:hover{
+  transform: scale(1.1);
+   filter: drop-shadow(10px 10px 20px black);
+}
 
  .about-text p {
    font-size: var(--p-font);
@@ -218,80 +224,29 @@
  }
 
  .skills-container {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
+   display:flex;
+   grid-template-columns: repeat(2,1fr);
    align-items: center;
-   gap: 2rem;
    margin-top: 4rem;
- }
 
- .skills-img img {
-   width: 80%;
-   padding-left: 4rem;
-   object-position: center;
  }
-
  .bars-box {
-   position: relative;
    display: flex;
-   justify-content: space-between;
-   align-items: center;
+   flex-wrap: wrap;
+   position: relative;
    padding: 1rem 0;
    margin-bottom: 1rem;
  }
 
  .bars-box h3,
  span {
+   
    font-size: 1.1rem;
    font-weight: 500;
  }
 
- .light-bar {
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   width: 100%;
-   height: 0.5rem;
-   background: hsla(260, 100%, 44%, 0.4);
-   border-radius: 0.5rem;
- }
 
- .percent-bar {
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   height: 0.5rem;
-   background: var(--main-color);
-   border-radius: 0.5rem;
- }
 
- .js1-bar {
-   width: 50%;
- }
-
- .css-bar {
-   width: 60%;
- }
-
- .js-bar {
-   width: 54%;
- }
-
- .my-bar {
-   width: 52%;
- }
-
-.py-bar { 
-   width: 50%;
- }
-
-.D-bar {
-   width: 70%;
- }
-
-.com-bar {
-   width: 80%;
- }
  .services-content {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
@@ -570,3 +525,59 @@
      margin-left: 25%;
    }
  }
+
+ /* The container for all the pills */
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 960px; /* Set a maximum width to prevent overflow */
+  margin: 0 auto; /* Center the container on the page */
+}
+
+/* Styles for all the pills */
+.common-pill {
+  font-weight: 600;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 25px;
+  font-family: 'Open Sans';
+  background-color: var(--main-color);
+  color: #fff;
+  transition: background-color .3s, color .3s, transform .2s;
+  flex: 0 1 calc(33.33% - 20px); /* 33.33% - 20px to account for margins */
+  margin: 10px;
+  white-space: nowrap;
+}
+
+/* Set a specific size for the largest pill */
+/* .l-outline-pill {
+  flex: 0 1 40%; /* The largest pill will take up to 40% of the container's width */
+
+/* Styles for pill hover effects */
+.common-pill:hover {
+  background-color: var(--hover);
+  transform: scale(1.1); /* Add a scale transformation to create an effect on hover */
+}
+
+/* Media query for responsiveness on smaller screens */
+@media screen and (max-width: 960px) {
+  .common-pill {
+    /* Show 2 pills in a row on smaller screens */
+    flex: 0 1 calc(50% - 20px); /* 50% - 20px to account for margins */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pill-container {
+    flex-direction: column; /* Stack the pills vertically on smaller screens */
+    align-items: center; /* Center the pills horizontally */
+  }
+  /* Override the width for all pills to take full width on smaller screens */
+  .common-pill {
+    flex: 0 1 calc(100% - 20px); /* 100% - 20px to account for margins */
+    max-width: none; /* Remove the maximum width on smaller screens */
+    width: 100%;
+
+  }
+}
